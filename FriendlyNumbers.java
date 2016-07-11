@@ -58,72 +58,72 @@ public class FriendlyNumbers {
 			
 			System.out.println("Among numbers " + start + " and " + end);
 
+			
 			int counter2 = start;
 			while(counter2 <= end / 8) {
-				FriendlyThread ft = new FriendlyThread(counter2);				
-				ft.start();
+				new FriendlyThread(counter2).start();				
 				counter2++; 		
 			}
 			
-			System.gc();	
 			while(Thread.activeCount() != 1) {
 				/*wait while working */
 			}
+			System.gc();	
 			
 			while(counter2 + 1 <= end / 4) {
-				FriendlyThread ft = new FriendlyThread(counter2);				
-				ft.start();
+				new FriendlyThread(counter2).start();				
 				counter2++; 		
 			}
 			
-			System.gc();
+			
 			while(Thread.activeCount() != 1) {
 				/*wait while working */
 			}
+			System.gc();
 			
 			while(counter2 + 1 <= end / 2) {
-				FriendlyThread ft = new FriendlyThread(counter2);				
-				ft.start();
+				new FriendlyThread(counter2).start();				
 				counter2++; 		
 			}
 			
-			System.gc();
+			//System.gc();
 			while(Thread.activeCount() != 1) {
 				/*wait while working */
 			}
+			System.gc();
 			
 			while(counter2 + 1 <=  5 * end / 8) {
-				FriendlyThread ft = new FriendlyThread(counter2);				
-				ft.start();
+				new FriendlyThread(counter2).start();				
 				counter2++; 		
 			}
 			
-			System.gc();
+			//System.gc();
 			while(Thread.activeCount() != 1) {
 				/*wait while working */
 			}
+			System.gc();
 			
 			while(counter2 + 1 <=  3 * end / 4) {
-				FriendlyThread ft = new FriendlyThread(counter2);				
-				ft.start();
+				new FriendlyThread(counter2).start();				
 				counter2++; 		
 			}
 			
-			System.gc();
+			
 			while(Thread.activeCount() != 1) {
 				/*wait while working */
 			}
+			System.gc();
 			
 			while(counter2 + 1 <= end) {
-				FriendlyThread ft = new FriendlyThread(counter2);				
-				ft.start();
+				new FriendlyThread(counter2).start();				
 				counter2++; 		
 			}
 			
-			System.gc();
 			while(Thread.activeCount() != 1) {
 				/*wait while working */
 			}
+			System.gc();
+
 			
 			ParallelOutput po0 = new ParallelOutput(numbers[outer], numbers[outer] + (end - start)/8, end);
 			po0.start();	
