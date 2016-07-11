@@ -59,12 +59,57 @@ public class FriendlyNumbers {
 			System.out.println("Among numbers " + start + " and " + end);
 
 			int counter2 = start;
-			while(counter2 <= end / 2) {
+			while(counter2 <= end / 8) {
 				FriendlyThread ft = new FriendlyThread(counter2);				
 				ft.start();
 				counter2++; 		
 			}
-						
+			
+			System.gc();	
+			while(Thread.activeCount() != 1) {
+				/*wait while working */
+			}
+			
+			while(counter2 + 1 <= end / 4) {
+				FriendlyThread ft = new FriendlyThread(counter2);				
+				ft.start();
+				counter2++; 		
+			}
+			
+			System.gc();
+			while(Thread.activeCount() != 1) {
+				/*wait while working */
+			}
+			
+			while(counter2 + 1 <= end / 2) {
+				FriendlyThread ft = new FriendlyThread(counter2);				
+				ft.start();
+				counter2++; 		
+			}
+			
+			System.gc();
+			while(Thread.activeCount() != 1) {
+				/*wait while working */
+			}
+			
+			while(counter2 + 1 <=  5 * end / 8) {
+				FriendlyThread ft = new FriendlyThread(counter2);				
+				ft.start();
+				counter2++; 		
+			}
+			
+			System.gc();
+			while(Thread.activeCount() != 1) {
+				/*wait while working */
+			}
+			
+			while(counter2 + 1 <=  3 * end / 4) {
+				FriendlyThread ft = new FriendlyThread(counter2);				
+				ft.start();
+				counter2++; 		
+			}
+			
+			System.gc();
 			while(Thread.activeCount() != 1) {
 				/*wait while working */
 			}
@@ -75,6 +120,7 @@ public class FriendlyNumbers {
 				counter2++; 		
 			}
 			
+			System.gc();
 			while(Thread.activeCount() != 1) {
 				/*wait while working */
 			}
